@@ -13,20 +13,17 @@ class Home{
 
         this.createPage();
 
-
-
-
-        this.controllMasini=new ControllerMasini();
+        this.controlCarti=new ControlBooks();
 
         this.populateTable();
 
-        this.btnCreareMasina=document.querySelector(".creeazaMasina");
-        this.btnCreareMasina.addEventListener("click",this.handleclick);
+        this.btnCreareCarte=document.querySelector(".createBook");
+        this.btnCreareCarte.addEventListener("click",this.handleclick);
 
         
-        this.tableCars=document.querySelector(".tableCars");
-        this.tableCars.addEventListener("click",this.handleSelectCar);
-        this.person=person;
+        this.tableBooks=document.querySelector(".tableBooks");
+        this.tableBooks.addEventListener("click",this.handleSelectBook);
+        
 
         
 
@@ -40,14 +37,13 @@ class Home{
         
         <h3>Books</h3>
         <button class="createBook">Create New Book</button>
-        <table>
+        <table class="tableBooks">
             <thead>
                 <tr>
                     <th scope="col">Title</th>
                     <th scope="col">Author</th>
                     <th scope="col">Genre</th>
                     <th scope="col">Year</th>
-                    
     
                  </tr>
     
@@ -71,15 +67,16 @@ class Home{
 
         let table=document.querySelector(".table");
 
-        this.controllMasini.list.forEach((e)=>{
+        this.controlCarti.list.forEach((e)=>{
 
             table.innerHTML+=`
-            <tr>
-                <th scope="row">${e.id}</th>
-                <td><a href="#" class="linkCars">${e.marca}</a></td>
-                <td>${e.pret}</td>
-                <td>${e.an}</td>
-              </tr>
+            
+        <tr>
+            <td scope="row"><a href="#" class="linkBooks">${e.title}</a></td>
+            <td>${e.author}</td>
+            <td>${e.genre}</td>
+            <td>${e.year}</td>
+        </tr>
             
             `
         })
@@ -90,10 +87,10 @@ class Home{
 
         e.preventdefault;
 
-        console.log("aici");
+        console.log("adaugare carte");
 
 
-        new Addcar();
+        new AddBooks();
        
 
 
@@ -101,24 +98,24 @@ class Home{
 
     
 
-     handleSelectCar=(e)=>{
+     handleSelectBook=(e)=>{
         
 
       let obj=e.target;
 
-      if(obj.classList.contains("linkCars")){
+      if(obj.classList.contains("linkBooks")){
        
-          // extragem id-ul masinii
+          // extragem id-ul cartii
          
          let idparseInt=obj.parentNode.previousSibling.parentNode.textContent.trim();
 
-         new Updatecar(parseInt(idparseInt));
+         new UpdateBooks(parseInt(idparseInt));
 
       }
 
      }
 
-     handleUpdateCar=(e)=>{
+     handleUpdateBooks=(e)=>{
         let obj=e.target;
 
       console.log(obj);
