@@ -110,3 +110,189 @@ button.createBook {
   button.createBook:hover{
       background-color: rgb(12, 141, 23);
   }
+
+  .containerB{
+    width:300px; 
+    display: flex;
+    text-align: left;
+    align-items: left;
+    justify-content: centeleft;
+    flex-direction: column;
+    
+    
+  }
+
+  .inputBooks{
+    width:210px;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-left: 20px;
+    
+    
+  }
+  .buttonsAddBooks{
+    width:200px;
+    display:flex;
+    margin-top: 10px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-left: 20px;
+
+  }
+
+  .newBooks{
+    background-color: #04AA6D;
+    border: none;
+    font-size: 18px;
+    color: #FFFFFF;
+    padding:5px;
+    width: 190px;
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    margin-left: 20px;
+    border-radius:5px ;
+    margin-bottom: 10px;
+
+  }
+
+  .newBooks:hover{
+    background-color: rgb(12, 141, 23);
+}
+
+.anuleaza{
+    background-color: #04AA6D;
+    border: none;
+    font-size: 18px;
+    color: #FFFFFF;
+    padding:5px;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    margin-left: 20px;
+    border-radius:5px ;
+  }
+
+  .anuleaza:hover{
+    background-color: rgb(12, 141, 23);
+}
+
+input{
+    
+    padding: 5px;
+    font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    border-radius: 2px;
+    border-color: rgb(231, 231, 231);
+    transition: all 0.4s ease 0s;
+}
+
+.containerModif{
+
+width:250px; 
+display: flex;
+text-align: left;
+align-items: left;
+justify-content: center;
+flex-direction: column;
+margin-bottom: 10px;;
+    
+}
+
+
+.updateBooks{
+    width:210px;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-left: 20px;
+        
+  }
+
+  .buttonsUpdateBooks{
+    width:200px;
+    display:flex;
+    margin-top: 10px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-left: 20px;
+    
+
+  }
+
+ 
+  .modifCarte{
+      margin-bottom: 10px;
+      background-color: #04AA6D;
+      border: none;
+      font-size: 18px;
+      color: #FFFFFF;
+      padding:5px;
+      width: 150px;
+      text-align: center;
+      text-decoration: none;
+      overflow: hidden;
+      cursor: pointer;
+      margin-left: 20px;
+      border-radius:5px ;
+  }
+
+  .modifCarte:hover{
+    background-color: rgb(12, 141, 23);
+}
+
+
+  .anuleazaModif{
+      margin-bottom: 10px;
+      background-color: #04AA6D;
+      border: none;
+      font-size: 18px;
+      color: #FFFFFF;
+      padding:5px;
+      width: 100px;
+      text-align: center;
+      text-decoration: none;
+      overflow: hidden;
+      cursor: pointer;
+      margin-left: 20px;
+      border-radius:5px ;
+  }
+
+  .anuleazaModif:hover{
+    background-color: rgb(12, 141, 23);
+}
+
+  .stergeCarte{
+    background-color: #04AA6D;
+    border: none;
+    font-size: 18px;
+    color: #FFFFFF;
+    padding:5px;
+    width: 130px;
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    margin-left: 20px;
+    border-radius:5px ;
+    margin-bottom: 10px;
+  }
+
+  .stergeCarte:hover{
+    background-color: rgb(12, 141, 23);
+}
+
+
+  
