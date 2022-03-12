@@ -97,7 +97,7 @@ class Home{
      }
 
     
-
+    // de verificat functia !
      handleSelectBook=(e)=>{
         
 
@@ -105,11 +105,12 @@ class Home{
 
       if(obj.classList.contains("linkBooks")){
        
-          // extragem id-ul cartii
+          // extragem titlu-ul cartii
          
-         let idparseInt=obj.parentNode.previousSibling.parentNode.textContent.trim();
+         //let titleB=obj.parentNode.previousSibling.parentNode.textContent.trim();
+         let titleB=obj.parentNode.textContent;
 
-         new UpdateBooks(parseInt(idparseInt));
+         new UpdateBooks(titleB);
 
       }
 

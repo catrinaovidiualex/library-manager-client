@@ -2,9 +2,9 @@ import ControlBooks from "../controller/ControlBooks.js";
 import Books from "../model/Books.js";
 import Home from "./Home.js";
 
-export default class UpdateBook{
+export default class UpdateBooks{
 
-    constructor(id){
+    constructor(title){
         this.container=document.querySelector(".container");
 
         this.createUpdateBookPage();
@@ -12,12 +12,12 @@ export default class UpdateBook{
 
         this.controllerCarti=new ControlBooks();
 
-        this.carte=this.controllerCarti.getCarteById(id);
+        this.carte=this.controllerCarti.getCarteById(title);
 
         
         this.populateBookInputs();
 
-        this.c={id};
+        this.c={title};
 
         this.containerB=document.querySelector(".updateBooks");
         this.containerB.addEventListener('input',this.handleUpdateOfInputs);

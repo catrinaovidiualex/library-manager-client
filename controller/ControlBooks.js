@@ -33,7 +33,7 @@ class ControlBooks{
      }
 
      //CRUD
-     //addbook
+     //addBook
 
      adaugareCarteNoua=(carte)=>{
 
@@ -88,7 +88,7 @@ class ControlBooks{
 
     
       
-      let vec=this.list.filter((e)=>e.id!=carte.id);
+      let vec=this.list.filter((e)=>e.title!=carte.title);
       this.list=vec;
       this.save();
     
@@ -97,7 +97,7 @@ class ControlBooks{
 
      pozitieCarte=(carte)=>{     
         for(let i=0;i<this.list.length;i++){
-            if(this.list[i].id==carte.id){
+            if(this.list[i].title==carte.title){
                return i;
             }
          }
@@ -114,11 +114,11 @@ class ControlBooks{
       
       }
 
-      getCarteById=(id)=>{
+      getCarteById=(title)=>{
 
         
          for(let i=0;i<this.list.length;i++){
-            if(this.list[i].id==id){
+            if(this.list[i].title==title){
                return this.list[i];
             }
          }

@@ -18,6 +18,9 @@ class AddBooks{
 
     this.add.addEventListener("click",this.handleclickadd);
 
+    this.cancelBtn=document.querySelector(".anuleaza");
+    this.cancelBtn.addEventListener("click",this.handleClickCancel);
+
  
  
     }
@@ -100,6 +103,10 @@ class AddBooks{
     
   
        }
+
+    handleClickCancel=()=>{
+        new Home();
+    }  
  
 
 }
