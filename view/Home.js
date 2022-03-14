@@ -1,19 +1,22 @@
-import ControlBooks from "../controller/ControlBooks.js"
+
 
 import AddBooks from "../view/AddBooks.js";
 
 import UpdateBooks from "../view/UpdateBooks.js";
 
+import Data from "../Api.js";
+
 class Home{
 
 
      constructor(){
+         this.data= new Data();
 
         this.container=document.querySelector(".container");
 
         this.createPage();
 
-        this.controlCarti=new ControlBooks();
+       
 
         this.populateTable();
 
@@ -62,12 +65,12 @@ class Home{
 
      }
 
-     populateTable=()=>{
-
-
+     populateTable= async()=>{
+       
+        let books= await  this.data.books();
         let table=document.querySelector(".table");
 
-        this.controlCarti.list.forEach((e)=>{
+        books.forEach((e)=>{
 
             table.innerHTML+=`
             
