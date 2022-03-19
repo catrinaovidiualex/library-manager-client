@@ -1,36 +1,22 @@
-
-
-import AddBooks from "../view/AddBooks.js";
-
-import UpdateBooks from "../view/UpdateBooks.js";
-
+import AddBook from "../view/AddBook.js";
 import Data from "../Api.js";
 
 class Home{
 
 
      constructor(){
-         this.data= new Data();
+        this.data= new Data();
 
         this.container=document.querySelector(".container");
 
         this.createPage();
-
-       
-
+      
         this.populateTable();
+     
+        this.btnCreateNB=document.querySelector(".createBook");
+        this.btnCreateNB.addEventListener("click", this.handleclick);
 
-        this.btnCreareCarte=document.querySelector(".createBook");
-        this.btnCreareCarte.addEventListener("click",this.handleclick);
-
-        
-        this.tableBooks=document.querySelector(".tableBooks");
-        this.tableBooks.addEventListener("click",this.handleSelectBook);
-        
-
-        
-
-       
+            
      }
 
      createPage=()=>{
@@ -90,41 +76,18 @@ class Home{
 
         e.preventdefault;
 
-        console.log("adaugare carte");
+        console.log("catre pagina de adaugare carte");
 
 
-        new AddBooks();
+        new AddBook();
        
 
 
      }
+
+
 
     
-    // de verificat functia !
-     handleSelectBook=(e)=>{
-        
-
-      let obj=e.target;
-
-      if(obj.classList.contains("linkBooks")){
-       
-          // extragem titlu-ul cartii
-         
-         //let titleB=obj.parentNode.previousSibling.parentNode.textContent.trim();
-         let titleB=obj.parentNode.textContent;
-
-         new UpdateBooks(titleB);
-
-      }
-
-     }
-
-     handleUpdateBooks=(e)=>{
-        let obj=e.target;
-
-      console.log(obj);
-
-     }
 
 }
 export default Home;

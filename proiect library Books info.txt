@@ -1,0 +1,86 @@
+[{"title":"100 de ani de singuratate",
+"author":"Gabriel",
+"genre":"Roman",
+"year":"1980",
+"idstudent":100},
+{"title":"To a God Unknown",
+"author":"Dr. Colton Jerde",
+"genre":"Textbook",
+"year":"1985",
+"idstudent":101},
+{"title":"A Farewell to Arms",
+"author":"Miss Chantal Crist",
+"genre":"Fiction in verse",
+"year":"1566",
+"idstudent":102},
+{"title":"Quo Vadis",
+"author":"Millard",
+"genre":"Fiction narrative",
+"year":"1139",
+"idstudent":103},
+{"title":"Vanity Fair",
+"author":"Berry Brekke",
+"genre":"Reference book",
+"year":"2013",
+"idstudent":104},
+{"title":"The Road Less Traveled",
+"author":"Delpha Kertzmann",
+"genre":"Essay",
+"year":"2002",
+"idstudent":105},
+{"title":"A Scanner Darkly",
+"author":"Shonta Bashirian",
+"genre":"Legend",
+"year":"2017",
+"idstudent":106}]
+
+
+
+[{"idstudent":"100",
+"nume":"Garnita",
+"prenume":"Robert",
+"facultatea":"ASE",
+"anstudiu":2019},
+
+{"idstudent":"101",
+"nume":"Barbulescu",
+"prenume":"Andrei",
+"facultatea":"SNSPA",
+"anstudiu":2012},
+
+{"idstudent":"102",
+"nume":"Caramida",
+"prenume":"Ana",
+"facultatea":"Drept",
+"anstudiu":2003},
+
+{"idstudent":"103",
+"nume":"Nistor",
+"prenume":"Monica",
+"facultatea":"Jurnalism",
+"anstudiu":2017},
+
+{"idstudent":"104",
+"nume":"Lica",
+"prenume":"Stefan",
+"facultatea":"Mecanica",
+"anstudiu":2000},
+
+
+{"idstudent":"105",
+"nume":"Dumitru",
+"prenume":"Doina",
+"facultatea":"Biologie",
+"anstudiu":1999},
+
+
+{"idstudent":"106",
+"nume":"Radut",
+"prenume":"Lavinia",
+"facultatea":"Geografie",
+"anstudiu":2009}
+]
+
+
+
+

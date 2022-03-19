@@ -31,11 +31,28 @@ export default class Data{
 
     async books(){
 
-       const response= await this.api('/alex');
+       const response= await this.api('/api/v1/books');
 
        const data = await response.json();
 
        return data;
+
+    }
+
+
+    async addBook(book){
+
+        const response = await this.api('/api/v1/books/add','POST',book);
+
+        if(response.status==202){
+
+            return "Est ok";
+        }else{
+
+            return "";
+        }
+
+
 
     }
 

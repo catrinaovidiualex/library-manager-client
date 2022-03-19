@@ -1,5 +1,4 @@
-import ControlBooks from "../controller/ControlBooks.js";
-import Books from "../model/Books.js";
+
 import Home from "./Home.js";
 
 class AddBooks{
@@ -7,9 +6,8 @@ class AddBooks{
     constructor(){
     this.containerAddBook=document.querySelector(".container");
     this.createAddBookPage();
-    this.control= new ControlBooks();
-
-    this.carte= new Books();
+   
+    //this.carte= new Books();
 
     this.inputBooks= document.querySelector(".inputBooks");
 
@@ -31,26 +29,18 @@ class AddBooks{
 
 
         this.containerAddBook.innerHTML=`
-
         <h3>New Book</h3>
         <div class="inputBooks">
            
-
-
             <label for="text">Title<label>
             <input type="text" class="titleBook"></input>
-
             <label for="text">Author</label>
             <input type="text" class="authorBook"></input>
-
             <label for="text">Genre<label>
             <input type="text" class="genreBook"></input>
-
             <label for="text">Year<label>
             <input type="text" class="yearBook"></input>
-
         </div>
-
         <div class="buttonsAddBooks">
             <input type="submit" value="Create New Book" class="newBooks">
             <button class="anuleaza">Cancel</button>
