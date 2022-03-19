@@ -7,7 +7,8 @@ class AddBooks{
     this.containerAddBook=document.querySelector(".container");
     this.createAddBookPage();
    
-    //this.carte= new Books();
+    // luam un obiect gol de tip carte pt a adauga valorile din api in obiect;
+    this.carte= {};
 
     this.inputBooks= document.querySelector(".inputBooks");
 
@@ -77,19 +78,21 @@ class AddBooks{
            
         }
 
-        console.log(this.carte);
+        //console.log(this.carte);
 
        
 
 
     }
 
-    handleclickadd=()=>{
+    handleclickadd=(e)=>{
        
-        this.control.adaugareCarteNoua(this.carte);
-       
+        console.log(this.carte);
 
-        new Home();
+        //new Home();
+        
+        
+
     
   
        }
