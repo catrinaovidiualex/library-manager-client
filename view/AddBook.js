@@ -1,12 +1,14 @@
 
 import Home from "./Home.js";
 
+import Data from "../Api.js";
+
 class AddBooks{
 
     constructor(){
     this.containerAddBook=document.querySelector(".container");
     this.createAddBookPage();
-   
+
     // luam un obiect gol de tip carte pt a adauga valorile din api in obiect;
     this.carte= {};
 
@@ -89,16 +91,19 @@ class AddBooks{
        
         console.log(this.carte);
 
-        //new Home();
-        
-        
-
+        let b = new Data();
     
-  
+        b.addBook(this.carte);
+    
+            new Home();
+
+
+
        }
 
     handleClickCancel=()=>{
-        new Home();
+          new Home();
+  
     }  
  
 

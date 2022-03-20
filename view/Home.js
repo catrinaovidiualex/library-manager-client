@@ -1,5 +1,6 @@
 import AddBook from "../view/AddBook.js";
 import Data from "../Api.js";
+import UpdateBook from "../view/UpdateBook.js";
 
 class Home{
 
@@ -12,10 +13,12 @@ class Home{
         this.createPage();
       
         this.populateTable();
-     
+    
         this.btnCreateNB=document.querySelector(".createBook");
         this.btnCreateNB.addEventListener("click", this.handleclick);
 
+        this.tableBooks=document.querySelector(".tableBooks");
+        this.tableBooks.addEventListener("click",this.handleSelectBook);
             
      }
 
@@ -60,7 +63,7 @@ class Home{
 
             table.innerHTML+=`
             
-        <tr>
+        <tr id=${e.id}>
             <td scope="row"><a href="#" class="linkBooks">${e.title}</a></td>
             <td>${e.author}</td>
             <td>${e.genre}</td>
@@ -84,6 +87,35 @@ class Home{
 
 
      }
+
+
+     //functie pentru apasarea pe titlu cartii
+     handleSelectBook=(e)=>{
+        
+
+        let obj=e.target;
+  
+        if(obj.classList.contains("linkBooks")){
+         
+            // extragem titlu-ul cartii
+           
+           let titleB=obj.parentNode.previousSibling.parentNode.textContent.trim();
+          
+           new UpdateBook(obj.titleB);
+  
+        }
+  
+      }
+
+      handleUpdateBooks=(e)=>{
+
+        let obj=e.target;
+
+        console.log(obj);
+
+     }
+  
+      
 
 
 

@@ -20,6 +20,8 @@ export default class Data{
 
        if(body!=null){
 
+                console.log("aici");
+
            options.body=JSON.stringify(body);
        }
 
@@ -53,6 +55,14 @@ export default class Data{
         }
 
 
+
+    }
+
+    async getBookById(id){
+
+        const response = await this.api('http://localhost:8080/api/v1/books/'+{id});
+        const data= await response.json();
+        return data;
 
     }
 
