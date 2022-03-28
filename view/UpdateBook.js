@@ -159,10 +159,12 @@ export default class UpdateBook{
          
     }
 
-    handleStergeCarte=(e)=>{
+    handleStergeCarte=async(e)=>{
         e.preventDefault();
         console.log("sterge carte");
-        this.controllerCarti.stergeCarte(this.c);
+        //console.log(this.carte.id); aceste este id-ul cartii ce trebuie stearsa
+        await this.api.deleteBook(this.carte.id);
+       
          new Home();
     }
 

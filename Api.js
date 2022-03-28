@@ -76,4 +76,13 @@ export default class Data{
 
     }
 
+    async deleteBook(id){
+        const response = await this.api(`/api/v1/books/delete/${id}`,'DELETE');
+        if(response.status==202){
+            return  "Cartea a fost stearsa";
+        }else{
+            return"";
+            }
+    }
+
 }
