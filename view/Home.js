@@ -98,10 +98,16 @@ class Home{
         if(obj.classList.contains("linkBooks")){
          
             // extragem titlu-ul cartii
+            
+
+            let id=obj.parentNode.parentNode.id
            
-           let titleB=obj.parentNode.previousSibling.parentNode.textContent.trim();
-          
-           new UpdateBook(obj.titleB);
+           // afiseaza id-ul de mai sus
+
+
+           new UpdateBook(id);
+
+  
   
         }
   

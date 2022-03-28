@@ -13,8 +13,7 @@ export default class Data{
             headers:{
 
                'Content-Type':'application/json;chartset=utf-8',
-            },
-            mode:'cors'
+            }
        }
 
 
@@ -60,9 +59,20 @@ export default class Data{
 
     async getBookById(id){
 
-        const response = await this.api('http://localhost:8080/api/v1/books/'+{id});
+        const response = await this.api('/api/v1/books/'+id);
         const data= await response.json();
         return data;
+
+    }
+    async updateBook(bk){
+        const response= await this.api('/api/v1/books/update','PUT', bk);
+        if (response.status==202){
+
+            return "A fost adaugata";
+
+        }else{
+            return "";
+        }
 
     }
 

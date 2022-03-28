@@ -1,17 +1,23 @@
 
 import Home from "./Home.js";
+import Api from "../Api.js";
 
 export default class UpdateBook{
 
-    constructor(title){
+    constructor(id){
+        this.api= new Api();
+        this.id=id;
         this.container=document.querySelector(".container");
 
         this.createUpdateBookPage();
          
         this.populateBookInputs();
 
-        this.title=title;
-        this.carte={};
+        this.carte={id:id};
+        
+
+       
+        
 
         this.containerB=document.querySelector(".updateBooks");
         this.containerB.addEventListener('input',this.handleUpdateOfInputs);
@@ -24,14 +30,18 @@ export default class UpdateBook{
 
         this.btnExitChange=document.querySelector(".anuleazaModif");
         this.btnExitChange.addEventListener("click",this.handleAnuleazaModificare);
+
        
         
     }
 
     
 
-    createUpdateBookPage=()=>{
+    createUpdateBookPage= async()=>{
     
+
+      
+
      this.container.innerHTML=`
      <form class="containerModif">
    
@@ -44,7 +54,7 @@ export default class UpdateBook{
              <input type="text" class="titleBook"></input>
  
              <label for="text">Author</label>
-             <input type="text" class="authorBook"></input>
+             <input type="text" class="authorBook" ></input>
  
              <label for="text">Genre<label>
              <input type="text" class="genreBook"></input>
@@ -66,30 +76,37 @@ export default class UpdateBook{
 
 
 
+
+
+
     }
 
-    handleUpdateOfInputs=()=>{
+    handleUpdateOfInputs=(e)=>{
 
 
+        let obj=e.target;
+
+
+        console.log(this.carte);
        
 
         if(obj.classList.contains("titleBook")){
-            this.c.title=obj.value;
+            this.carte.title=obj.value;
            
         }
 
         if(obj.classList.contains("authorBook")){
-            this.c.author=obj.value;
+            this.carte.author=obj.value;
            
         }
 
         if(obj.classList.contains("genreBook")){
-            this.c.genre=obj.value;
+            this.carte.genre=obj.value;
            
         }
 
         if(obj.classList.contains("yearBook")){
-            this.c.year=obj.value;
+            this.carte.year=obj.value;
            
         }
 
@@ -97,40 +114,47 @@ export default class UpdateBook{
         
 
     }
-
   
-    populateBookInputs=()=>{
+    populateBookInputs=async ()=>{
 
-        
+        let book= await this.api.getBookById(this.id);
+
+
+        this.carte=book;
+
 
         let bookTitle=document.querySelector(".titleBook");
-        bookTitle.value=this.title;
+        bookTitle.value=book.title;
 
         let bookAuthor=document.querySelector(".authorBook");
-        bookAuthor.value=this.author;
+        bookAuthor.value=book.author;
 
         let bookGenre=document.querySelector(".genreBook");
-        bookGenre.value=this.genre;
+        bookGenre.value=book.genre;
 
         let bookYear=document.querySelector(".yearBook");
-        bookYear.value=this.year;
+
+        bookYear.value=book.year;
           
-        
-        
 
     }
 
-
-
-    handleModificaCarte=(e)=>{
+    handleModificaCarte=async(e)=>{
 
         e.preventDefault();
 
         console.log("modificare carte");
 
-         this.updateBook(this.carte);
 
-         new Home();
+
+
+       await this.api.updateBook(this.carte);
+
+        
+
+       
+         location.reload();
+         
 
          
     }
@@ -138,7 +162,7 @@ export default class UpdateBook{
     handleStergeCarte=(e)=>{
         e.preventDefault();
         console.log("sterge carte");
-        // this.controllerCarti.stergeCarte(this.c);
+        this.controllerCarti.stergeCarte(this.c);
          new Home();
     }
 
