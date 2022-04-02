@@ -46,7 +46,13 @@ class AddBooks{
         </div>
         <div class="buttonsAddBooks">
             <input type="submit" value="Create New Book" class="newBooks">
+            
+        </div>
+
+        <div class="otherButtons">
             <button class="anuleaza">Cancel</button>
+            <button class="sortare">Sort by Year</button>
+            <button class="filtrare">Filter by Title</button>
         </div>
         
         `

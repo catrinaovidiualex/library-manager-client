@@ -166,6 +166,18 @@ button.createBook {
     background-color: rgb(12, 141, 23);
 }
 
+.otherButtons{
+  width:200px;
+  display:flex;
+  margin-top: 10px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-left: 20px;
+
+}
+
 .anuleaza{
     background-color: #04AA6D;
     border: none;
@@ -183,6 +195,43 @@ button.createBook {
 
   .anuleaza:hover{
     background-color: rgb(12, 141, 23);
+}
+
+.sortare{
+  background-color: #04AA6D;
+  border: none;
+  font-size: 18px;
+  color: #FFFFFF;
+  padding:5px;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  margin-left: 20px;
+  border-radius:5px ;
+}
+
+.sortare:hover{
+  background-color: rgb(12, 141, 23);
+}
+.filtrare{
+  background-color: #04AA6D;
+  border: none;
+  font-size: 18px;
+  color: #FFFFFF;
+  padding:5px;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  margin-left: 20px;
+  border-radius:5px ;
+}
+
+.filtrare:hover{
+  background-color: rgb(12, 141, 23);
 }
 
 input{
