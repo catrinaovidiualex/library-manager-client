@@ -19,6 +19,16 @@ class Home{
 
         this.tableBooks=document.querySelector(".tableBooks");
         this.tableBooks.addEventListener("click",this.handleSelectBook);
+
+       
+        this.btnSortBooks=document.querySelector(".sortare");
+        this.btnSortBooks.addEventListener("click",this.handleSort);
+
+        this.btnFilterBooks=document.querySelector(".filtrare");
+        this.btnFilterBooks.addEventListener("click",this.handleFilter);
+
+        this.btnExitChange=document.querySelector(".anuleaza");
+        this.btnExitChange.addEventListener("click",this.handleClickCancel);
             
      }
 
@@ -64,7 +74,10 @@ class Home{
      populateTable= async()=>{
        
         let books= await  this.data.books();
+
         let table=document.querySelector(".table");
+
+        table.innerHTML="";
 
         books.forEach((e)=>{
 
@@ -79,6 +92,34 @@ class Home{
             
             `
         })
+     }
+
+
+
+     populateSortedTable=(arr)=>{
+     
+      console.log(arr);
+   
+     let table=document.querySelector(".table");
+
+
+     table.innerHTML="";
+
+     arr.forEach((e)=>{
+
+     table.innerHTML+=`
+         
+     <tr id=${e.id}>
+         <td scope="row"><a href="#" class="linkBooks">${e.title}</a></td>
+         <td>${e.author}</td>
+         <td>${e.genre}</td>
+         <td>${e.year}</td>
+     </tr>
+     `
+
+     });
+
+
      }
 
      handleclick=(e)=>{
@@ -126,9 +167,41 @@ class Home{
 
         console.log(obj);
 
+
+
+     }
+
+     handleSort=async(e)=>{
+        let obj=e.target;
+        if(obj.classList.contains("sortare")){
+
+
+
+        
+
+
+
+         let sortedBooks=await this.data.sortBooks();
+
+
+
+
+         this.populateSortedTable(sortedBooks);
+
+        }
+
+      
+
      }
   
         
+     handleClickCancel=()=>{
+     
+      new Home();
+
+      } 
+
+
 
 }
 export default Home;

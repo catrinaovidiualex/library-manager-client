@@ -85,4 +85,19 @@ export default class Data{
             }
     }
 
+    async sortBooks(){
+        const response= await this.api('/api/v1/books/sortBooks');
+
+        if(response.status==202){
+
+        const books=await response.json();
+
+        return books;
+
+        }else{
+
+            return "Eroare la sortare carti";
+        }
+    }
+
 }
