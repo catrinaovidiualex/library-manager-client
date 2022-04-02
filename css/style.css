@@ -167,8 +167,8 @@ button.createBook {
 }
 
 .otherButtons{
-  width:200px;
-  display:flex;
+  width:700px;
+  display:inline-block;
   margin-top: 10px;
   align-items: center;
   flex-direction: column;
@@ -203,7 +203,7 @@ button.createBook {
   font-size: 18px;
   color: #FFFFFF;
   padding:5px;
-  width: 100px;
+  width: 120px;
   text-align: center;
   text-decoration: none;
   overflow: hidden;
@@ -221,7 +221,7 @@ button.createBook {
   font-size: 18px;
   color: #FFFFFF;
   padding:5px;
-  width: 100px;
+  width: 120px;
   text-align: center;
   text-decoration: none;
   overflow: hidden;

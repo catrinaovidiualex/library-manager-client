@@ -48,6 +48,13 @@ class Home{
             </tbody>
     
         </table>
+
+        
+    <div class="otherButtons">
+        <button class="anuleaza">Cancel</button>
+        <button class="sortare">Sort by Year</button>
+        <button class="filtrare">Filter by Title</button>
+    </div>
     
         
         `
