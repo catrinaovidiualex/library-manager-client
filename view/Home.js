@@ -39,6 +39,8 @@ class Home{
         
         <h3>Books</h3>
         <button class="createBook">Create New Book</button>
+        <label for="text">Filter by Title<label>
+        <input type="text" class="inputFilter"></input>
         <table class="tableBooks">
             <thead>
                 <tr>
@@ -63,7 +65,7 @@ class Home{
     <div class="otherButtons">
         <button class="anuleaza">Cancel</button>
         <button class="sortare">Sort by Year</button>
-        <button class="filtrare">Filter by Title</button>
+             
     </div>
     
         
