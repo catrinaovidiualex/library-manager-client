@@ -44,6 +44,11 @@ class AddBooks{
             <label for="text">Year<label>
             <input type="text" class="yearBook"></input>
         </div>
+
+        <div class="buttonsAddBooks">
+            <input type="submit" value="Create New Book" class="newBooks">
+            <button class="anuleaza">Cancel</button>
+        </div>
        
         
         `
