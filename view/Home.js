@@ -24,8 +24,8 @@ class Home{
         this.btnSortBooks=document.querySelector(".sortare");
         this.btnSortBooks.addEventListener("click",this.handleSort);
 
-        this.btnFilterBooks=document.querySelector(".filtrare");
-        this.btnFilterBooks.addEventListener("click",this.handleFilter);
+        this.btnFilterBooks=document.querySelector(".inputFilter");
+        this.btnFilterBooks.addEventListener("keypress",this.handleFilter);
 
         this.btnExitChange=document.querySelector(".anuleaza");
         this.btnExitChange.addEventListener("click",this.handleClickCancel);
@@ -177,16 +177,7 @@ class Home{
         let obj=e.target;
         if(obj.classList.contains("sortare")){
 
-
-
-        
-
-
-
          let sortedBooks=await this.data.sortBooks();
-
-
-
 
          this.populateSortedTable(sortedBooks);
 
@@ -195,6 +186,32 @@ class Home{
       
 
      }
+
+   handleFilter=async(e)=>{
+      let obj=e.target;
+
+
+      try{
+         if(e.code=="Enter"){
+
+            let filteredBooks=await this.data.filterByTitle(this.btnFilterBooks.value);
+
+
+           
+            this.populateSortedTable(filteredBooks);
+
+
+
+
+
+         }
+
+      }catch(e){
+
+         console.log(e);
+      }
+
+      }
   
         
      handleClickCancel=()=>{
@@ -206,4 +223,5 @@ class Home{
 
 
 }
+
 export default Home;

@@ -100,4 +100,20 @@ export default class Data{
         }
     }
 
+    async filterByTitle(title){
+        const response= await this.api(`/api/v1/books/filterBooksByTitle/${title}`);
+
+        if(response.status==202){
+
+        const books=await response.json();
+
+        return books;
+
+        }else{
+
+            return "Eroare la filtrare carti";
+        }
+
+    }
+
 }
